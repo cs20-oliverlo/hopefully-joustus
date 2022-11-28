@@ -1,0 +1,13 @@
+body {
+  text-align: center;
+  background: black;
+  margin-top: 50px;
+}
+
+h1 {
+  color: white;
+}
+
+#my-canvas {
+  border: 1px solid white;
+}
