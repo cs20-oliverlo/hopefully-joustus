@@ -46,7 +46,7 @@ function mouseupHandler() {
 }
 
 function keydownHandler(event) {
-  if (event.code == "ArrowUP") {
+  if (event.code == "ArrowUp") {
     console.log("up");
   } else if (event.code == "ArrowDown") {
     console.log("down");

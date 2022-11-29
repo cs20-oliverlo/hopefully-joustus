@@ -1,4 +1,11 @@
+@font-face {
+  font-family: "shovel-knight";
+  src: url("shovel-knight-font2.ttf");
+}
+
 body {
+  font-family: "shovel-knight";
+  font-size: 13px;
   text-align: center;
   background: black;
   margin-top: 50px;

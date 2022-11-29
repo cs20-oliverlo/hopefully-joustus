@@ -1,5 +1,39 @@
 HOME PAGE
-Get the right font for things
-
+A 1 vs 1 card game about pushing
 
 HOW TO PLAY
+
+    Objective: Claim more gems than the opponent
+
+    The game ends when:
+        1 No more valid moves can be made
+        2 There are no more open spots (not graveyard)
+        3 A player has no more cards on the start of their turn (the opponent wins regardless of who has more gems, but a gem sweep may still occur)
+    
+    Rules:
+        1 Player have 16 cards in a deck, 3 in their hand at a time
+        2 Players cannot directly put cards on gems, but can push them onto gems instead
+        3 Cards cannot be placed in the graveyard unless a card with the "Grave" ability is placed there or another card pushes a card with said ability
+        4 Players cannot push a card with opposing arrows that are equal/more than their own
+        5 Their are different arrow types and abilities (possibility, not sure if I want to implement)
+        6 At the end of the game, player with the most gems (cards on gems) wins
+        7 Cheats are single-use items and exist
+        8 If a player has all gems in their possession by the end of the game, they get a gem sweep (possible reward???)
+
+    Arrow Types:
+        1 Standard - Can push no arrows or block equal arrows
+        2 Double - Can push Standard arrows or less, can block equal or less
+        3 Bomb - After initial placement, can blow up cards if pushed into others (should the other have less than or equal arrows?)
+        4 Conveyor - A Double arrow that continues to push after initial placement
+        5 Count - a Triple arrow that disappears 3 turns after initial placement
+
+    Abilities:
+        1 Slam - On placement, all arrows try to push at once
+        2 Grave - Can be placed and push cards in the graveyard, while also being able to be pushed by non-Grave cards
+        3 Switch - After placement, arrows reverse sides after each push
+        4 Cascade - On initial push, all pushed cards swap teams (until end of battle)
+
+    Cheats (possibly implemented):
+        1 Gem Thief - All cards on gems swap teams to yours
+        2 Beeto Swap - Swap your opponents hand with 3 weak cards (all Beetos)
+        3 Play 'em All - Play all 3 cards in your hand at once
