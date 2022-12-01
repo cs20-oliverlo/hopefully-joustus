@@ -10,6 +10,12 @@ cnv.height = 720;
 let mouseIsPressed = false;
 
 // Global Variables (Reset)
+let state;
+let playerTurn;
+let selector;
+let selectorState;
+let selectorIncrement;
+reset();
 
 // Draw Function
 window.addEventListener("load", draw);
@@ -43,60 +49,18 @@ function mouseupHandler() {
 }
 
 function keydownHandler(event) {
-  if (event.code === "ArrowUp") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        moveSelectorUp1();
-      } else if (playerTurn === "player2") {
-        moveSelectorUp2();
-      }
-    }
-
-  } else if (event.code === "ArrowDown") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        moveSelectorDown1();
-      } else if (playerTurn === "player2") {
-        moveSelectorDown2();
-      }
-    }
-
-  } else if (event.code === "ArrowRight") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        moveSelectorRight1();
-      } else if (playerTurn === "player2") {
-        moveSelectorRight2();
-      }
-    }
-
-  } else if (event.code === "ArrowLeft") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        moveSelectorLeft1();
-      } else if (playerTurn === "player2") {
-        moveSelectorLeft2();
-      }
-    }
-
+  if (event.code === "KeyW") {
+    moveSelectorUp();
+  } else if (event.code === "KeyS") {
+    moveSelectorDown();
+  } else if (event.code === "KeyD") {
+    moveSelectorRight();
+  } else if (event.code === "KeyA") {
+    moveSelectorLeft();
   } else if (event.code === "KeyZ") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        selectorConfirm1();
-      } else if (playerTurn === "player2") {
-        selectorConfirm2();
-      }
-    }
-
+    selectorConfirm();
   } else if (event.code === "KeyX") {
-    if (state === "gameon") {
-      if (playerTurn === "player1") {
-        selectorCancel1();
-      } else if (playerTurn === "player2") {
-        selectorCancel2();
-      }
-    }
-
+    selectorCancel();
   } else if (event.code === "Enter") {
     console.log("Enter");
 
