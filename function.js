@@ -27,37 +27,46 @@ function drawMainComponents() {
 }
 
 function moveSelectorUp() {
-    if (state === "gameon" && selectorState === "hand") {
+    if (state === "gameon" && selector.state === "hand") {
         if (playerTurn == 0) {
-            selector.y += selectorIncrement.up;
+            if (selector.state === "hand") {
+                selector.y += selector.incUp;
 
-            if (selector.y < selector.handTop) {
-                selector.y = selector.handBottom
+                if (selector.y < selector.handTop) {
+                    selector.y = selector.handBottom
+                }
             }
         } else {
-            selector.y += selectorIncrement.up;
+            if (selector.state === "hand") {
+                selector.y += selector.incUp;
 
-            if (selector.y < selector.handTop) {
-                selector.y = selector.handBottom
+                if (selector.y < selector.handTop) {
+                    selector.y = selector.handBottom
+                }
             }
         }
     }
 }
   
 function moveSelectorDown() {
-    if (state === "gameon" && selectorState === "hand") {
+    if (state === "gameon") {
         if (playerTurn == 0) {
-            selector.y += selectorIncrement.down;
+            if (selector.state === "hand") {
+                selector.y += selector.incDown;
 
-            if (selector.y > selector.handBottom) {
-                selector.y = selector.handTop
+                if (selector.y > selector.handBottom) {
+                    selector.y = selector.handTop
+                } 
             }
         } else {
-            selector.y += selectorIncrement.down;
+            if (selector.state === "hand") {
+                selector.y += selector.incDown;
 
-            if (selector.y > selector.handBottom) {
-                selector.y = selector.handTop
+                if (selector.y > selector.handBottom) {
+                    selector.y = selector.handTop
+                }
             }
+
         }
     }
 }
@@ -84,21 +93,33 @@ function moveSelectorLeft() {
   
   
 function selectorConfirm() {
-    if (state === "gameon" && selectorState === "hand") {
+    if (state === "gameon") {
         if (playerTurn == 0) {
-    
+            if (selector.state === "hand") {
+
+            }
+
         } else {
-        
+            if (selector.state === "hand") {
+
+            }
+
         }
     }
 }
   
 function selectorCancel() {
-    if (state === "gameon" && selectorState === "hand") {
+    if (state === "gameon") {
         if (playerTurn == 0) {
-    
+            if (selector.state === "hand") {
+
+            }
+
         } else {
-        
+            if (selector.state === "hand") {
+
+            }
+
         }
     }
 }
@@ -113,11 +134,9 @@ function reset() {
         h: 75,
         handTop: 50,
         handBottom: 250,
-    };
-    selectorState = "hand";
-    selectorIncrement = {
-        up: -100,
-        down: 100
+        state: "hand",
+        incUp: -100,
+        incDown: 100
     };
 
     if (playerTurn == 0) {
@@ -128,3 +147,38 @@ function reset() {
         selector.y = 50
     }
 }
+
+// USE FOR LATER
+
+// var suits = [];
+// suits["spades"] = [
+//   // spades
+//   ["A", "spade"],
+//   ["2", "spade"],
+//   ["3", "spade"],
+//   ["4", "spade"],
+//   ["5", "spade"],
+//   ["6", "spade"],
+//   ["7", "spade"],
+//   ["8", "spade"],
+//   ["9", "spade"],
+//   ["10", "spade"],
+//   ["J", "spade"],
+//   ["Q", "spade"],
+//   ["K", "spade"]
+// ];
+
+//   // declare vars
+// var i = deck.length,
+//     temp,
+//     rand;
+//   // while there remain elements to shuffle
+// while (0 !== i) {
+//     // pick a remaining element
+//     rand = Math.floor(Math.random() * i);
+//     i--;
+//     // and swap it with the current element
+//     temp = deck[i];
+//     deck[i] = deck[rand];
+//     deck[rand] = temp;
+// }

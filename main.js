@@ -57,9 +57,9 @@ function keydownHandler(event) {
     moveSelectorRight();
   } else if (event.code === "KeyA") {
     moveSelectorLeft();
-  } else if (event.code === "KeyZ") {
+  } else if (event.code === "KeyJ") {
     selectorConfirm();
-  } else if (event.code === "KeyX") {
+  } else if (event.code === "KeyK") {
     selectorCancel();
   } else if (event.code === "Enter") {
     console.log("Enter");
