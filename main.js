@@ -3,8 +3,8 @@
 // Set up canvas and graphics context
 let cnv = document.getElementById("my-canvas");
 let ctx = cnv.getContext("2d");
-cnv.width = 1080;
-cnv.height = 720;
+cnv.width = 720;
+cnv.height = 480;
 
 // Global Variables (Once)
 let mouseIsPressed = false;
