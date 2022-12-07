@@ -3,7 +3,7 @@
 function drawStart() {
     // Background
     ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, cnv.clientWidth, cnv.height);
+    ctx.fillRect(0, 0, cnv.width, cnv.height);
 
     // Start Text
     ctx.font = "20px shovel-knight";
