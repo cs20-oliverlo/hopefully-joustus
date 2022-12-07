@@ -22,7 +22,8 @@ function drawMainComponents() {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, cnv.width, cnv.height);
 
-    ctx.drawImage(wizzem.img, 50, 50, card.handW, card.handH);
+    ctx.drawImage(propRat.img, 50, 50, card.handW, card.handH);
+    ctx.drawImage(redPropRat.img, 570, 50, card.handW, card.handH);
 
     ctx.strokeStyle = "rgb(0, 255, 0)";
     ctx.lineWidth = 4;
@@ -170,103 +171,263 @@ function reset() {
         selector.x = 570;
         selector.y = 50;
     }
-}
 
-let propRat = {
-    img: document.getElementById("card1")
-}
-let redPropRat = { 
-    img: document.getElementById("card2")
-}
-let blitzsteed = {
-    img: document.getElementById("card3")
-}
-let redBlitzsteed = {
-    img: document.getElementById("card4")
-}
-let blorb = {
-    img: document.getElementById("card5")
-}
-let redBlorb = {
-    img: document.getElementById("card6")
-}
-let beeto = {
-    img: document.getElementById("card7")
-}
-let redBeeto = {
-    img: document.getElementById("card8")
-}
-let dozeddrake = {
-    img: document.getElementById("card9")
-}
-let redDozeddrake = {
-    img: document.getElementById("card10")
-}
-let invisishade = {
-    img: document.getElementById("card11")
-}
-let redInvisishade = {
-    img: document.getElementById("card12")
-}
-let zamby = {
-    img: document.getElementById("card13")
-}
-let redZamby = {
-    img: document.getElementById("card14")
-}
-let fleeto = {
-    img: document.getElementById("card15")
-}
-let redFleeto = {
-    img: document.getElementById("card16")
-}
-let divedrake = {
-    img: document.getElementById("card17")
-}
-let redDivedrake = {
-    img: document.getElementById("card18")
-}
-let boneclang = {
-    img: document.getElementById("card19")
-}
-let redBoneclang = {
-    img: document.getElementById("card20")
-}
-let wizzem = {
-    img: document.getElementById("card21")
-}
-let redWizzem = {
-    img: document.getElementById("card22")
-}
-let superSkeleton = {
-    img: document.getElementById("card23")
-}
-let redSuperSkeleton = {
-    img: document.getElementById("card24")
-}
-let griffoth = {
-    img: document.getElementById("card25")
-}
-let redGriffoth = {
-    img: document.getElementById("card26")
-}
-let goldarmor = {
-    img: document.getElementById("card27")
-}
-let redGoldarmor = {
-    img: document.getElementById("card28")
-}
-let flailarmor = {
-    img: document.getElementById("card29")
-}
-let redFlailarmor = {
-    img: document.getElementById("card30")
-}
-let rookie = {
-    img: document.getElementById("card31")
-}
-let redRookie = {
-    img: document.getElementById("card32")
+    propRat = {
+        img: document.getElementById("card1"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    redPropRat = { 
+        img: document.getElementById("card2"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    blitzsteed = {
+        img: document.getElementById("card3"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    redBlitzsteed = {
+        img: document.getElementById("card4"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    blorb = {
+        img: document.getElementById("card5"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    redBlorb = {
+        img: document.getElementById("card6"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    beeto = {
+        img: document.getElementById("card7"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    redBeeto = {
+        img: document.getElementById("card8"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    dozeddrake = {
+        img: document.getElementById("card9"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    redDozeddrake = {
+        img: document.getElementById("card10"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    invisishade = {
+        img: document.getElementById("card11"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    redInvisishade = {
+        img: document.getElementById("card12"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    zamby = {
+        img: document.getElementById("card13"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    redZamby = {
+        img: document.getElementById("card14"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    fleeto = {
+        img: document.getElementById("card15"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    redFleeto = {
+        img: document.getElementById("card16"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    divedrake = {
+        img: document.getElementById("card17"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    redDivedrake = {
+        img: document.getElementById("card18"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    boneclang = {
+        img: document.getElementById("card19"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    redBoneclang = {
+        img: document.getElementById("card20"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    wizzem = {
+        img: document.getElementById("card21"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    redWizzem = {
+        img: document.getElementById("card22"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 0,
+        leftArrow: 1,
+        selected: false
+    }
+    superSkeleton = {
+        img: document.getElementById("card23"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    redSuperSkeleton = {
+        img: document.getElementById("card24"),
+        topArrow: 0,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    griffoth = {
+        img: document.getElementById("card25"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    redGriffoth = {
+        img: document.getElementById("card26"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 0,
+        selected: false
+    }
+    goldarmor = {
+        img: document.getElementById("card27"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    redGoldarmor = {
+        img: document.getElementById("card28"),
+        topArrow: 1,
+        bottomArrow: 0,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    flailarmor = {
+        img: document.getElementById("card29"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    redFlailarmor = {
+        img: document.getElementById("card30"),
+        topArrow: 1,
+        bottomArrow: 1,
+        rightArrow: 1,
+        leftArrow: 1,
+        selected: false
+    }
+    rookie = {
+        img: document.getElementById("card31"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
+    redRookie = {
+        img: document.getElementById("card32"),
+        topArrow: 0,
+        bottomArrow: 0,
+        rightArrow: 0,
+        leftArrow: 0,
+        selected: false
+    }
 }
 
 // USE FOR LATER
